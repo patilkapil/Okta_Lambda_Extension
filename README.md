@@ -1,6 +1,6 @@
 # Example Extension in Python
 The provided code sample demonstrates how to sewtup a basic Okta extension written in Python 3  
-
+This is an example for the demonstration purposes, and this code has not been tested in a production environment.
 > Note: This extension is inspired from https://github.com/aws-samples/aws-lambda-extensions/tree/main/python-example-extension
 
 
