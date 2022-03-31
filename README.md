@@ -35,3 +35,20 @@ okta_token_url
 
 Extension reads environment values and creates a token .json file in a /tmp location
 Lambda code can read the json file & access token for any further downstream applications 
+
+## Architecture Diagram 
+
+![image](https://user-images.githubusercontent.com/2838125/161128097-4dcc4b99-e5fc-4f66-be1f-9ed72869ddf4.png)
+
+
+## Assumptions: 
+* Lambda function is dependent on a backend API to complete the operation
+* Lambda function can rely on the Lambda Extension to hand over an access token
+
+## Step by step flow
+* Step 1: The client sends a request to a lambda function
+* Step 2: Lambda extension reads configuration parameters from a lambda function.
+* Step 3: Lambda extensions interact with OAuth server to generate access token
+* Step 4: Lambda extensions genertes access token and stores them into a temp storage 
+* Step 5: The lambda function will use access tokens from a temp storage location
+* Step 6: Retrieved access tokens are sent to the resource provider with the appropriate header format to get the desired data
